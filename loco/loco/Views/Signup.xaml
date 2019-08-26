@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="loco.Views.Signup">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand">
+
+            <Label Text="Stay Connected, It's Free"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="{Binding Message}" IsVisible="False" TextColor="Red" ></Label>
+
+            <Entry x:Name="Name" Text="{Binding SignupViewModel.Name}" Placeholder="Your name" PlaceholderColor="Olive"> </Entry>
+            <Label x:Name="SignupModel_NameError" IsVisible="False" TextColor="Red"/>
+            
+
+            <Entry x:Name="Password" Text="{Binding SignupViewModel.Password}" Placeholder="Password" PlaceholderColor="Olive"></Entry>
+            <Label x:Name="SignupModel_PasswordError" IsVisible="False" TextColor="Red"/>
+
+            <Entry x:Name="Email" Placeholder="Email" Text="{Binding SignupViewModel.Email}" PlaceholderColor="Olive" MaxLength="15" Keyboard="Email"></Entry>
+            <Label x:Name="SignupModel_Email" IsVisible="False" TextColor="Red"/>
+
+            <Label x:Name="Address"></Label>
+            <Button x:Name="Submit" Text="Create account (it's free)"
+                    Command="{Binding SignupCommand}" BackgroundColor="LightBlue"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
